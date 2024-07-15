@@ -16,6 +16,7 @@ if (x === 10) {
 console.log(y);
 
 
+
 //A3
 /*
     var x = 10;
