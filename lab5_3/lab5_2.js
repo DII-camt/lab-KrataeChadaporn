@@ -1,27 +1,23 @@
 const d1 = new Date('2024-01-01');
-const d2 = new Date(); // วันที่ปัจจุบัน
+const d2 = new Date();
 
-const countDays = (startDate, endDate) => {
-    const oneDay = 24 * 60 * 60 * 1000; // จำนวนมิลลิวินาทีในหนึ่งวัน
-    const diffInTime = endDate.getTime() - startDate.getTime(); // ความต่างของเวลาระหว่างสองวันที่กำหนด
-    return Math.round(diffInTime / oneDay); // คำนวณจำนวนวันและปัดเศษ
-};
+const A = (d1,d2) =>{
+    const oneDay = 24 * 60 * 60 * 1000; // Hours * minutes * seconds * milliseconds
+    return Math.round(Math.abs((d2 - d1) / oneDay));
+  };
+  
+  console.log(A(d1, d2));
 
-console.log(countDays(d1, d2)); // แสดงผลจำนวนวันที่นับ
-
-const birthDate = new Date('2023-01-01');
-
-const calculateAge = (birthDate) => {
-    const today = new Date(); // วันที่ปัจจุบัน
-    let age = today.getFullYear() - birthDate.getFullYear(); // คำนวณความต่างของปี
-
-    // ตรวจสอบเดือนและวันเพื่อลดอายุลงหนึ่งปีถ้าปีนี้ยังไม่ถึงวันเกิด
-    const monthDiff = today.getMonth() - birthDate.getMonth();
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
+  //6
+const d11 = new Date('2023-01-01');
+const AA = (d11) =>{
+    const today = new Date();
+    let age = today.getFullYear() - d11.getFullYear();
+    const monthDifference = today.getMonth() - d11.getMonth();
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < d11.getDate())) {
+      age--;
     }
-
-    return age; // คืนค่าอายุ
-};
-
-console.log(calculateAge(birthDate)); // แสดงผลอายุที่คำนวณได้
+    return age;
+  };
+  
+  console.log(AA(d11));
